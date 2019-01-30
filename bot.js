@@ -49,7 +49,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 'الرابط') {
-    msg.reply('https://discord.gg/CksS5DX');
+    msg.reply('https://discord.gg/5uzqwJN');
   }
 });
 
@@ -182,10 +182,7 @@ client.on('message', msg => {
       let embed = new Discord.RichEmbed()
       .setColor("RANDOM")
    .setTitle(`تفضل يا قلبي 🌹`)
-   .setDescription(` 
-حط هنا الرابط خيو 
-الي يعجبك حطه يوول
-`)
+   .setDescription(`https://discord.gg/5uzqwJN`)
 .setFooter(`${msg.guild.name}™`)
 
 
