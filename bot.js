@@ -176,20 +176,7 @@ client.on('message', message => {
     
      
 
-client.on('message', msg => {
-  if (msg.content === 'رابط') {
-          msg.react("💜")
-      let embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
-   .setTitle(`تفضل يا قلبي 🌹`)
-   .setDescription(`https://discord.gg/5uzqwJN`)
-.setFooter(`${msg.guild.name}™`)
 
-
-
-msg.channel.sendEmbed(embed);      
-  }   
- });
 
 
 
@@ -812,8 +799,48 @@ client.on('guildMemberAdd', member => {
 
 
 
+client.on('message', message => {
+if (message.content === "!server") {
+let embed = new Discord.RichEmbed()
+.setColor("RANDOM")
+.setThumbnail(message.guild.iconURL)
+.setTitle(`info about ${message.guild.name}`)
+.addField(' 🆔 Server ID',`➥` + message.guild.id, true)
+.addField(" 👑 Owned by",`➥ ${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
+.addField(" 🌍 Server Region",`➥ ` + message.guild.region, true)
+.addField(" 👥 Server Member Size",`➥ ` + message.guild.memberCount, true)
+.addField(' 💬 Channels ', `➥ **${message.guild.channels.filter(m => m.type === 'text').size}** + ' text | Voice  '+ **${message.guild.channels.filter(m => m.type === 'voice').size}**`,true)
+.addField(" 🔐 Roles ", `➥ ${message.guild.roles.size} Role`,true)
+.addField(" 📅 Created On", `➥ ${message.guild.createdAt.toLocaleString()}`,true)
+.addField(" 💤 AFK channel",`➥ ` + message.guild.afkChannel || 'Null', true)
+.setTimestamp()
+.setFooter(message.author.tag, message.author.avatarURL)
 
 
+message.channel.sendEmbed(embed);
+}
+});
+
+
+
+client.on('message', message => {
+    if (message.content.startsWith("رابط")) {
+
+  message.channel.createInvite({
+        thing: true,
+        maxUses: 10,
+        maxAge: 86400
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+  message.channel.send("**تم ارسال الرابط برسالة خاصة**")
+
+message.author.send(`**مدة الرابط : يـوم
+عدد استخدامات الرابط : 2**`)
+
+
+    }
+});
 
 
 client.login(process.env.BOT_TOKEN);
