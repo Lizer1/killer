@@ -813,26 +813,7 @@ message.channel.sendEmbed(embed);
 
 
 
-client.on('message', message => {
-    if (message.content.startsWith("رابط")) {
 
-  message.channel.createInvite({
-        thing: true,
-        maxUses: 10,
-        maxAge: 86400
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-  message.channel.send("**تم ارسال الرابط برسالة خاصة**")
-
-message.author.send(`**https://discord.gg/MemWmU**`)
-      
-     message.author.send(`**مدة الرابط : يـوم**`)
-message.author.send(`**عدد استخدامات الرابط :5**`)
-
-
-    }
-});
 
 
 
