@@ -41,17 +41,7 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', msg => {
-  if (msg.content === 'كيلر') {
-    msg.reply('**عيون كيلر**');
-  }
-});
 
-client.on('message', msg => {
-  if (msg.content === 'الرابط') {
-    msg.reply('https://discord.gg/5uzqwJN');
-  }
-});
 
 
 client.on('ready', () => {
@@ -815,7 +805,6 @@ message.channel.sendEmbed(embed);
 
 
 
-
 client.on('message', message => {
     if (message.content.startsWith("رابط")) {
 
@@ -828,13 +817,12 @@ client.on('message', message => {
     )
   message.channel.send("**تم ارسال الرابط برسالة خاصة**")
 
-message.author.send(`**https://discord.gg/MemWmU مدة الرابط : يـوم
-عدد استخدامات الرابط : 5**`)
+message.author.send(`**مدة الرابط : يـوم
+عدد استخدامات الرابط : 2**`)
 
 
     }
 });
-
 
 
 
