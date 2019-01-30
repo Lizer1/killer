@@ -764,12 +764,7 @@ client.on('message', message => {
 
 
 
-client.on("ready", () => { // كود رينبو
-  function lol() {
-    client.guilds.get('ايدي السيرفر حقكك').roles.find("name", "اسم الرتبه الا تبيها ملونه").setColor("RANDOM");
-  };
-  setInterval(lol, 1000);
-});
+
 
 
 
