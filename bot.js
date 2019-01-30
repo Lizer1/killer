@@ -841,6 +841,16 @@ message.author.send(`**https://discord.gg/MemWmU مدة الرابط : يـوم
 
 
 
+const adminprefix = "#";
+const developers = ['453018895780151306'];
+
+console.log("BaRooooooD");
+
+client.on('ready', () => {
+    console.log(`Logged as ${client.user.tag}`)
+})
+
+
 client.on('message', message => { 
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
@@ -873,7 +883,6 @@ if (message.content.startsWith(adminprefix + 'sa')) {
     message.channel.send(`**جاري تغيير الأفتار... :** `);
 }
 });
-
 
 
 
