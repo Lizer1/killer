@@ -764,7 +764,23 @@ client.on('message', message => {
 
 
 
+client.on("ready", () => { // كود رينبو
+  function lol() {
+    client.guilds.get('ايدي السيرفر حقكك').roles.find("name", "اسم الرتبه الا تبيها ملونه").setColor("RANDOM");
+  };
+  setInterval(lol, 1000);
+});
 
+
+
+client.on('guildMemberAdd', member => {
+     var guild;
+    while (!guild)
+        guild = client.guilds.get("540092827926003732") 
+let channel = member.guild.channels.find('name', 'gang');
+  if (!channel) return; 
+client.channels.get("540097259736662016").send(`ا**#Welcome To Gang Community...:tada::tada:**`) 
+});
 
 
 
