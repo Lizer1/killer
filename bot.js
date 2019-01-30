@@ -176,7 +176,23 @@ client.on('message', message => {
     
      
 
+client.on('message', msg => {
+  if (msg.content === 'رابط') {
+          msg.react("💜")
+      let embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+   .setTitle(`تفضل يا قلبي 🌹`)
+   .setDescription(` 
+حط هنا الرابط خيو 
+الي يعجبك حطه يوول
+`)
+.setFooter(`${msg.guild.name}™`)
 
+
+
+msg.channel.sendEmbed(embed);      
+  }   
+ });
 
 
 
